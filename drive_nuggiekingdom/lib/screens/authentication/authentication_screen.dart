@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/src/consumer.dart';
 class AuthenticationScreen extends Screen {
   const AuthenticationScreen({
     super.key,
-    super.path = "/signin_screen",
-    super.name = "signin_screen",
+    super.path = "/signin",
+    super.name = "signin",
   });
 
   @override

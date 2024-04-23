@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/src/consumer.dart';
 class HomeScreen extends Screen {
   const HomeScreen({
     super.key,
-    super.path = "/home_screen",
-    super.name = "home_screen",
+    super.path = "/",
+    super.name = "home",
   });
 
   @override

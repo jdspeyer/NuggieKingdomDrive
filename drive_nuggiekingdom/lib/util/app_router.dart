@@ -26,11 +26,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     debugLogDiagnostics: true,
 
     /// Initial Routing Location (Uses the [SplashScreen])
-    initialLocation: HomeScreen().path,
+    initialLocation: const HomeScreen().path,
 
     routes: <GoRoute>[
       /// Home Screen Route
-      /// This is the [Screen] where you can look at your returned restaurants.
       GoRoute(
           name: const HomeScreen().name,
           path: const HomeScreen().path,
@@ -39,24 +38,13 @@ final routerProvider = Provider<GoRouter>((ref) {
           }),
 
       /// Authentication Screens Route
-      /// This includes: Create, Login, and Forgot Password
-      /// The index refers to what index of the slider the page should start on. (0=create, 1=login, 2=forgot password)
+      /// This includes: Login with Discord
       GoRoute(
-          name: AuthenticationScreen().name,
-          path: AuthenticationScreen().path,
+          name: const AuthenticationScreen().name,
+          path: const AuthenticationScreen().path,
           builder: (BuildContext context, GoRouterState state) {
-            /// Default value
-            int index = 1;
 
-            /// Check if the index was passed as a parameter
-            if (state.pathParameters['index'] != null) {
-              /// Set the index. [int.tryParse] will return null if it does not parse.
-              /// We can check that null value and set index to 1 if this occurs.
-              index =
-                  int.tryParse(state.pathParameters['index'] as String) ?? 1;
-            }
-
-            return AuthenticationScreen();
+            return const AuthenticationScreen();
           }),
     ],
 
@@ -71,7 +59,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         /// No account detected. Push to the auhentication screen
         /// so they can sign in.
         if (user == null) {
-          return AuthenticationScreen().path;
+          return const AuthenticationScreen().path;
         }
 
         /// profile screen body{}

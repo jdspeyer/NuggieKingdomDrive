@@ -17,12 +17,14 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version-file: pubspec.yaml # path to pubspec.yaml
+          flutter-version-file: ./drive_nuggiekingdom/pubspec.yaml # path to pubspec.yaml
       - name: Check Flutter Version
         run: flutter --version
       - name: Run Unit Tests
+        working-directory: ./drive_nuggiekingdom
         run: flutter test
       - name: Build Web Application
+        working-directory: ./drive_nuggiekingdom
         run: flutter build web
       - name: Deploy Preview Version To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0

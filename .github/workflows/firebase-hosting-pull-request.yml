@@ -20,9 +20,15 @@ jobs:
           flutter-version-file: ./drive_nuggiekingdom/pubspec.yaml # path to pubspec.yaml
       - name: Check Flutter Version
         run: flutter --version
+      - name: Run Unit Tests
+        run: flutter test
+        with:
+          entryPoint: ./drive_nuggiekingdom
       - name: Build Web Application
         run: flutter build web
-      - name: Deploy To Firebase Hosting
+        with:
+          entryPoint: ./drive_nuggiekingdom
+      - name: Deploy Preview Version To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./drive_nuggiekingdom

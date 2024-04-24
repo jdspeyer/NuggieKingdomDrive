@@ -23,9 +23,6 @@ jobs:
       - name: Run Unit Tests
         working-directory: ./drive_nuggiekingdom
         run: flutter test
-      - name: Build Web Application
-        working-directory: ./drive_nuggiekingdom
-        run: flutter build web
       - name: Deploy Preview Version To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

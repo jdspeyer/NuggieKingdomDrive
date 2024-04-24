@@ -16,18 +16,15 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          entryPoint: ./drive_nuggiekingdom
           channel: stable
-          flutter-version-file: ./drive_nuggiekingdom/pubspec.yaml # path to pubspec.yaml
+          flutter-version-file: pubspec.yaml # path to pubspec.yaml
       - name: Check Flutter Version
         run: flutter --version
       - name: Run Unit Tests
         run: flutter test
-        with:
-          entryPoint: ./drive_nuggiekingdom
       - name: Build Web Application
         run: flutter build web
-        with:
-          entryPoint: ./drive_nuggiekingdom
       - name: Deploy Preview Version To Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

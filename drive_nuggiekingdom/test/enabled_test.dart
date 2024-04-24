@@ -13,8 +13,8 @@ void main() {
   /// Expected: true
   /// 
   test('Testing Enabled',(){
-     const bool testingEnabled = false;
-     expect(testingEnabled,true);
+     const bool testingEnabled = true;
+     expect(testingEnabled,true, reason: "Testing was not enabled. Ensure that tests are running correctly by checking drive_nuggiekingdom/test/enabled_test.dart.");
   });
 
 }

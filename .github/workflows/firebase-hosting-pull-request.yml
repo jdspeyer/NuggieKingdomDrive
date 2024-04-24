@@ -17,7 +17,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version-file: drive_nuggiekingdom/pubspec.yaml # path to pubspec.yaml
+          flutter-version-file: ./drive_nuggiekingdom/pubspec.yaml # path to pubspec.yaml
       - run: flutter --version
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

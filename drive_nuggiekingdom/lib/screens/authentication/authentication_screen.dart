@@ -15,7 +15,7 @@ class AuthenticationScreen extends Screen {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Container(color: Colors.blue),
+      body: Container(color: Colors.red),
     );
   }
 }
